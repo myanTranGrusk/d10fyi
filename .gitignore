@@ -1,0 +1,10 @@
+/vendor/
+/web/sites/default/files/
+/web/sites/default/settings.php
+/node_modules/
+*.log
+*.sqlite
+*.gz
+*.sql
+/.idea/
+/.env
