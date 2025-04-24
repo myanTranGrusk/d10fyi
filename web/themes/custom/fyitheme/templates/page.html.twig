@@ -17,12 +17,16 @@
 </section>
 {% endif %}
 
-<main class="container my-5">
+<main class="mGrusk-page-html-twig container my-5">
   <div class="row">
+    {% if page.sidebar_left %}
     <aside class="col-md-3">
       {{ page.sidebar_left }}
     </aside>
-    <section class="col-md-9">
+    <section class="page-content col-md-9">
+    {% else %}
+    <section class="page-content">
+    {% endif %}
       {{ page.content }}
     </section>
   </div>
