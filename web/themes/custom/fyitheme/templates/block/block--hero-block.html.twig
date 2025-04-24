@@ -1,0 +1,31 @@
+<section
+  class="hero-banner position-relative text-white text-center"
+  style="background-image: url('{{
+    content.field_background_image
+  }}'); background-size: cover; background-position: center;"
+>
+  {% if content.field_color_overlay %}
+  <div
+    class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: {{ content.field_color_overlay }}CC;"
+  ></div>
+  {% endif %}
+
+  <div class="hero-content position-relative container py-5">
+    {% if content.field_hero_headline %}
+    <h1 class="display-4">{{ content.field_hero_headline }}</h1>
+    {% endif %} {% if content.field_hero_tagline %}
+    <p class="lead">{{ content.field_hero_tagline }}</p>
+    {% endif %}
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+      {% if content.field_hero_link_1 %}
+      {{ content.field_hero_link_1 }}
+      {% endif %} {% if content.field_hero_link_2 %}
+      {{ content.field_hero_link_2 }}
+      {% endif %} {% if content.field_hero_link_3 %}
+      {{ content.field_hero_link_3 }}
+      {% endif %}
+    </div>
+  </div>
+</section>
