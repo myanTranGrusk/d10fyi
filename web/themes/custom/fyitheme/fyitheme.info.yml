@@ -1,6 +1,6 @@
-name: 'FYI Theme"
+name: "FYI Theme"
 type: theme
-description: 'Custom Bootstrap 5 subtheme for DCFYI'
+description: "Custom Bootstrap 5 subtheme for DCFYI"
 core_version_requirement: ^10
 base theme: bootstrap5
 
