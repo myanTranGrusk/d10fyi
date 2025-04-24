@@ -1,0 +1,17 @@
+name: 'FYI Theme"
+type: theme
+description: 'Custom Bootstrap 5 subtheme for DCFYI'
+core_version_requirement: ^10
+base theme: bootstrap5
+
+libraries:
+  - fyitheme/global-styling
+
+regions:
+  header_left: Header Left
+  header_right: Header Right
+  title: Title
+  content: Content
+  sidebar_left: Left Sidebar
+  footer_left: Footer Left
+  footer_right: Footer Right
