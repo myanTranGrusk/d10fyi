@@ -60,6 +60,27 @@ body main a:hover {
   color: var(--clr-acc-warm);
 }
 
+nav.navbar > div.d-flex {
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+#block-fyitheme-branding img {
+  height: 100px;
+}
+
+.d-flex .region.region-nav-branding,
+#navbarSupportedContent {
+  padding: 10px;
+}
+
+div#navbarSupportedContent {
+  display: flex;
+  align-items: flex-end;
+}
+
 /* Language switcher */
 div#block-fyitheme-languagedropdownswitcher {
   text-align: center;
