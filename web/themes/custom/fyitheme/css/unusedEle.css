@@ -1,0 +1,50 @@
+/* Sidebar Guide Navigation || VIEW */
+/* #block-fyitheme-sectionmenu {
+  display: none;
+} */
+main .region.region-sidebar-first {
+  margin: 0 1.5em 0 1.2em;
+  padding: 0;
+}
+
+div#block-fyitheme-views-block-guide-navigation-block-1 {
+  font-family: var(--ff-para);
+  color: var(--clr-dark);
+}
+
+#block-fyitheme-views-block-guide-navigation-block-1 :is(h2, h3) {
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-headings);
+}
+
+#block-fyitheme-views-block-guide-navigation-block-1 h2 {
+  font-size: var(--lg-font);
+}
+
+#block-fyitheme-views-block-guide-navigation-block-1 h3 {
+  font-size: var(--s-font);
+  margin-top: 1rem;
+}
+
+.guide-nav-title {
+  font-size: var(--s-font);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+span.title-chevron {
+  margin-right: 1em;
+  font-size: var(--xs-font);
+}
+
+.guide-nav-title a {
+  text-decoration: none;
+  color: rgba(var(--clr-acc-cool), 0.4);
+  letter-spacing: 0.05em;
+}
+
+.guide-nav-title:hover .title-chevron i {
+  transform: translateX(20px);
+}
