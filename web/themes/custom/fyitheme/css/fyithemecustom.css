@@ -182,6 +182,54 @@ button.hero-link-item:hover {
   color: var(--clr-lite);
 }
 
+/* Three Top Links Block */
+
+.link-card {
+  display: block;
+  width: 200px;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  overflow: hidden;
+}
+
+.link-card-inner {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+div#block-fyitheme-fyithreetoplinks {
+  padding: 5rem 1rem;
+  background-color: peachpuff;
+}
+
+.link-cards-description {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
 /* Introduction Page */
 div#block-fyitheme-pagetitle {
   background-color: var(--clr-acc-warm);

@@ -90,14 +90,14 @@ parameters:
     # @default false
 
     # Twig Debug OFF
-    # debug: false
-    # auto_reload: null
-    # cache: true
+    debug: false
+    auto_reload: null
+    cache: true
 
     # Twig Debug ON
-    debug: true
-    auto_reload: true
-    cache: false
+    # debug: true
+    # auto_reload: true
+    # cache: false
 
     # File extensions:
     #

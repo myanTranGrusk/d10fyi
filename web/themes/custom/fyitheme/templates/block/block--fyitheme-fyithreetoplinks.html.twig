@@ -39,16 +39,24 @@
 <div{{ attributes.addClass(classes) }} id="three-link-card-block">
 
     <div class="link-cards d-flex justify-content-center gap-4 flex-wrap text-center">
-        {% for i in [1, 2, 3] %}
+
+      {% for i in [1, 2, 3] %}
         {% set link_field = attribute(content, 'field_link_card_url_' ~ i) %}
         {% set text_field = attribute(content, 'field_link_card_text_' ~ i) %}
+        {% set image_field = attribute(content, 'field_link_card_' ~ i ~ '_image') %}
+        {% set image_url = image_field[0]['#item'].entity.uri.value is defined
+          ? file_url(image_field[0]['#item'].entity.uri.value)
+          : '' %}
 
         {% if link_field and text_field %}
-            <a href="{{ link_field[0]['#url'] }}" class="link-card">
-                <div class="link-card-inner">{{ text_field }}</div>
-            </a>
+          <a href="{{ link_field[0]['#url'] }}" class="link-card" style="background-image: url('{{ image_url }}');">
+            <div class="link-card-inner">
+              <div class="link-card-text">{{ text_field }}</div>
+            </div>
+          </a>
         {% endif %}
-        {% endfor %}
+      {% endfor %}
+
     </div>
 
   {% if content.field_link_card_description %}
