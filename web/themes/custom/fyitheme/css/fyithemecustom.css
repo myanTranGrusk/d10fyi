@@ -184,19 +184,28 @@ button.hero-link-item:hover {
 
 /* Three Top Links Block */
 
+.link-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
 .link-card {
   display: block;
-  width: 200px;
-  height: 240px;
+  width: 18rem;
+  height: 14rem;
+  font-family: var(--ff-para);
+  font-size: var(--reg-font);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--clr-acc-cool);
   border-radius: 6px;
-  margin: 10px;
   text-decoration: none;
-  color: #333;
+  color: var(--clr-lite);
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   outline: none;
   overflow: hidden;
@@ -205,7 +214,7 @@ button.hero-link-item:hover {
 .link-card-inner {
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(30, 73, 53, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,11 +232,19 @@ button.hero-link-item:hover {
 div#block-fyitheme-fyithreetoplinks {
   padding: 5rem 1rem;
   background-color: peachpuff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: visible;
+  color: var(--clr-dark);
+  font-family: var(--ff-headings);
 }
 
 .link-cards-description {
   text-align: center;
-  margin-top: 1.5rem;
 }
 
 /* Introduction Page */
