@@ -1,0 +1,28 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/custom.css: {}
+      css/fyithemecustom.css: {}
+
+bootstrap:
+  css:
+    theme:
+      /themes/contrib/bootstrap5/css/bootstrap.min.css: {}
+  js:
+    /themes/contrib/bootstrap5/js/bootstrap.min.js: {}
+
+custom-menu:
+  version: 1.x
+  js:
+    js/expandMenuv2.js: {}
+
+truncExpandCalloutBox:
+  version: 1.x
+  js:
+    js/truncExpandCalloutBox.js: {}
+
+direct-download:
+  version: 1.x
+  js:
+    js/downloadGenerator.js: {}

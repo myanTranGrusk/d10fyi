@@ -1,0 +1,16 @@
+:root {
+  --clr-lite: rgba(207, 221, 223, 1);
+  --clr-white: rgba(241, 239, 237, 1);
+  --clr-dark: rgba(30, 73, 53, 1);
+  --clr-acc-cool: rgba(52, 108, 77, 1);
+  --clr-acc-cool-lite: rgba(113, 162, 135, 1);
+  --clr-acc-warm: rgba(159, 116, 74, 1);
+}
+
+
+:root {
+      --clr-lite: rgb(243, 234, 210);
+  --clr-dark: rgb(37, 35, 34);
+  --clr-acc-cool: rgb(0, 114, 65);
+  --clr-acc-warm: rgb(243, 199, 0);
+}

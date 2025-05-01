@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'block-NDI-heroblock',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+{% set hero_image_url = content.field_hero_image_upload[0]['#markup'] %}
+
+<div id="heroblock" style="background-image: url('{{ hero_image_url }}')">
+
+  <div class="title-container">
+    {# Render title and subtitle fields here #}
+    <div id="site-title" class="hero-title">{{ content.field_hero_title }}</div>
+    <div id="site-subtitle" class="hero-subtitle">{{ content.field_hero_subtitle }}</div>
+  </div>
+
+<div class="hero-links">
+  {% if content.field_hero_block_link_1 and content.field_hero_block_link_1[0] %}
+    <div class="hero-link-wrapper">
+      <button class="hero-link-item" tabindex="1">{{ content.field_hero_block_link_1 }}</button>
+    </div>
+  {% endif %}
+  {% if content.field_hero_block_link_2 and content.field_hero_block_link_2[0] %}
+    <div class="hero-link-wrapper">
+      <button class="hero-link-item" tabindex="1">{{ content.field_hero_block_link_2 }}</button>
+    </div>
+  {% endif %}
+  {% if content.field_hero_block_link_3 and content.field_hero_block_link_3[0] %}
+    <div class="hero-link-wrapper">
+      <button class="hero-link-item" tabindex="1">{{ content.field_hero_block_link_3 }}</button>
+    </div>
+  {% endif %}
+  {% if content.field_hero_block_link_4 and content.field_hero_block_link_4[0] %}
+    <div class="hero-link-wrapper">
+      <button class="hero-link-item" tabindex="1">{{ content.field_hero_block_link_4 }}</button>
+    </div> 
+  {% endif %}
+</div>
+
+</div>
+
+
+</div>
