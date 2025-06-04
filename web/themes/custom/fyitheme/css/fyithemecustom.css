@@ -184,67 +184,85 @@ button.hero-link-item:hover {
 
 /* Three Top Links Block */
 
+div#block-fyitheme-fyithreetoplinks {
+  padding: 4rem 2rem;
+  background-color: var(--clr-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#three-link-card-block {
+  background-color: #f5f5f5;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
 .link-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5rem;
+  gap: 4.5rem;
+  max-width: 1200px;
+  margin: 4.5rem auto;
 }
 
 .link-card {
-  display: block;
-  width: 18rem;
-  height: 14rem;
-  font-family: var(--ff-para);
-  font-size: var(--reg-font);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-  border: 1px solid var(--clr-acc-cool);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--clr-lite);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  outline: none;
-  overflow: hidden;
-}
-
-.link-card-inner {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(30, 73, 53, 0.5);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
+  width: 260px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .link-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-div#block-fyitheme-fyithreetoplinks {
-  padding: 5rem 1rem;
-  background-color: peachpuff;
+.link-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.link-card-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  flex-shrink: 0;
-  overflow: visible;
-  color: var(--clr-dark);
-  font-family: var(--ff-headings);
+  justify-content: space-between;
+  padding: 1rem;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.link-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #212121;
+  margin: 0.5rem 0;
+}
+
+.link-card-footer {
+  font-weight: 400;
+  color: #444;
+  font-size: 0.85rem;
+  margin-top: auto;
 }
 
 .link-cards-description {
   text-align: center;
+  align-self: center;
+  max-width: 75%;
+  font-size: 0.9rem;
+  color: var(--clr-lite);
+  margin-bottom: 1rem;
 }
 
 /* Introduction Page */
