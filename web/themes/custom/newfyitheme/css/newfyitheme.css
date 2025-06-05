@@ -31,8 +31,7 @@ nav#block-newfyitheme-main-navigation {
 }
 
 .navbar-brand img {
-  filter: drop-shadow(0 0 0.5px var(--color-muted))
-          drop-shadow(0 0 1px var(--color-muted));
+  filter: drop-shadow(0 0 0.5px var(--color-secondary))
 }
 
 .region.region-header ul.navbar-nav.nav-level-0 {
@@ -54,6 +53,11 @@ nav#block-newfyitheme-main-navigation {
 }
 
 /* Hero Block Layout */
+
+main div.container {
+  max-width: 100%;
+  padding: 0;
+}
 .block-newfiytheme-onelinkheroblock5 .field--name-field-image-media img {
   width: 5rem;
   height: auto;
