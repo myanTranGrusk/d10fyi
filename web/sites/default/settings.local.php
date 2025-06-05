@@ -9,6 +9,7 @@ $config['system.logging']['error_level'] = 'verbose';
 
 // Load development services file (this is where Twig debug is enabled).
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['twig_debug'] = TRUE;
 
 // Allow access to rebuild.php (for rebuilding the cache via URL).
 $settings['rebuild_access'] = TRUE;
