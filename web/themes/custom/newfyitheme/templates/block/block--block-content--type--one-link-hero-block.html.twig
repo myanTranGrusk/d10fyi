@@ -1,0 +1,13 @@
+{% extends "block.html.twig" %} {% block content %}
+<div class="one-link-hero-block mgrusk">
+  <div class="hero-image">
+    {{ content.field_image_media }}
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-headline"><h2>{{ content.field_title_headline }}</h2></div>
+    <div class="hero-subtitle">{{ content.field_subtitle_paragraph }}</div>
+    <div class="hero-link">{{ content.field_one_link }}</div>
+  </div>
+</div>
+{% endblock %}
