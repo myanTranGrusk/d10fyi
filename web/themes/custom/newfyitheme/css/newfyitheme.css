@@ -1,14 +1,14 @@
 /* Color Palette */
 
 :root {
-  --color-primary: #3e2a20; /* Deep chocolate brown */
-  --color-accent: #d6b13f; /* Warm mustard yellow */
-  --color-accent-alt: #8ba13e; /* Olive green */
-  --color-secondary: #7c543b; /* Reddish brown */
-  --color-tertiary: #727273; /* Slate gray */
-  --color-bg-light: #ffffff; /* Clean white background */
-  --color-text: #1a1a1a; /* Near-black for body text */
-  --color-muted: #a0a0a0; /* Soft muted gray for subtext or borders */
+  --color-primary: #3e2a20;
+  --color-accent: #d6b13f;
+  --color-accent-alt: #8ba13e;
+  --color-secondary: #7c543b;
+  --color-tertiary: #727273;
+  --color-bg-light: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #a0a0a0;
 }
 
 /* Layout & Header */
@@ -31,7 +31,7 @@ nav#block-newfyitheme-main-navigation {
 }
 
 .navbar-brand img {
-  filter: drop-shadow(0 0 0.5px var(--color-secondary))
+  filter: drop-shadow(0 0 0.5px var(--color-secondary));
 }
 
 .region.region-header ul.navbar-nav.nav-level-0 {
@@ -52,12 +52,25 @@ nav#block-newfyitheme-main-navigation {
   display: none;
 }
 
+.dropdown-menu {
+  border-radius: 0;
+  border: none;
+}
+
 /* Hero Block Layout */
 
 main div.container {
   max-width: 100%;
   padding: 0;
 }
+
+div#block-newfyitheme-onelinkheroblock5 {
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .block-newfiytheme-onelinkheroblock5 .field--name-field-image-media img {
   width: 5rem;
   height: auto;
