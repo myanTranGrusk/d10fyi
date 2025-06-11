@@ -136,3 +136,76 @@ div#block-newfyitheme-onelinkheroblock5 {
   outline: 3px solid var(--color-highlight);
   outline-offset: 2px;
 }
+
+/* 3 Link Cards Styling */
+.three-card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 5rem;
+  justify-content: center;
+  background-color: var(--color-tertiary);
+}
+
+@media (min-width: 768px) {
+  .three-card-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Link Card styling */
+.link-card {
+  flex: 1;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  max-width: 34rem;
+}
+
+.link-card-inner {
+  display: flex;
+  height: 18rem;
+}
+
+.link-card-image,
+.link-card-content,
+.diagonal-separator {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Link Card image */
+.link-card-image {
+  flex: 0 0 55%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.link-card-image .field--type-image {
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+}
+
+.link-card-image img {
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Link Card content */
+.link-card-content {
+  flex: 0 0 45%;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.link-card-title {
+  color: var(--color-accent-alt);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
