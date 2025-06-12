@@ -214,12 +214,60 @@ div#block-newfyitheme-onelinkheroblock5 {
 }
 
 /* Blog Post page styling */
-
 .blog-post-content {
   display: flex;
-  padding: 4rem;
+  padding: 4rem 12rem;
+  align-items: stretch;
+  gap: 2rem;
 }
 
 .blog-content {
+  flex: 1;
+  height: 32rem;
   padding-left: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.blog-title {
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.blog-date {
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.blog-image {
+  flex: 0 0 40%;
+  max-width: 40%;
+  height: 32rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-image img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.blog-body {
+  overflow-y: auto;
+  padding-right: 1rem;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+.blog-body::-webkit-scrollbar {
+  width: 8px;
+}
+.blog-body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
 }

@@ -1,7 +1,12 @@
 <div class="blog-post-content">
   <div class="blog-image">{{ content.field_blog_image }}</div>
   <div class="blog-content">
-    <div class="blog_date">{{ content.field_publish_date }}</div>
+    <div class="blog-title">
+      <h2>{{ node.label }}</h2>
+    </div>
+    <div class="blog-date">
+      {{ node.field_publish_date.value|date("F j, Y") }}
+    </div>
     <div class="blog-body">{{ content.body }}</div>
   </div>
 </div>
