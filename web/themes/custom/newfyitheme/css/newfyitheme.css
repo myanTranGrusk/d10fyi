@@ -212,3 +212,14 @@ div#block-newfyitheme-onelinkheroblock5 {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 600;
 }
+
+/* Blog Post page styling */
+
+.blog-post-content {
+  display: flex;
+  padding: 4rem;
+}
+
+.blog-content {
+  padding-left: 2rem;
+}
