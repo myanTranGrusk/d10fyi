@@ -145,11 +145,13 @@ div#block-newfyitheme-onelinkheroblock5 {
   padding: 5rem;
   justify-content: center;
   background-color: var(--color-tertiary);
+  flex-wrap: nowrap;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .three-card-row {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -196,16 +198,17 @@ div#block-newfyitheme-onelinkheroblock5 {
 /* Link Card content */
 .link-card-content {
   flex: 0 0 45%;
-  padding: 2rem;
+  padding: clamp(0.75rem, 2rem, 2.5rem);
   background-color: var(--color-primary);
   color: var(--color-muted);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: clamp(0.75rem, 1rem, 1.2rem);
 }
 
 .link-card-title {
   color: var(--color-accent-alt);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 600;
 }
