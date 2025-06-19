@@ -19,11 +19,14 @@
 
 .region.region-header {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   height: 6rem;
-  background-color: var(--color-text);
-  padding: 0 12rem;
+  background-color: var(--color-bg-light);
+  margin: 0 auto;
+  max-width: 80%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav#block-newfyitheme-main-navigation {
@@ -38,7 +41,7 @@ nav#block-newfyitheme-main-navigation {
   display: flex;
   flex-direction: row;
   font-size: 0.8rem;
-  color: var(--color-bg-light);
+  color: var(--color-text);
   gap: 0.75rem;
 }
 
@@ -147,7 +150,7 @@ div#block-newfyitheme-onelinkheroblock5 {
 .three-card-row {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  gap: 4rem;
   padding: 5rem;
   justify-content: center;
   background-color: var(--color-tertiary);
@@ -321,12 +324,30 @@ div#block-newfyitheme-onelinkheroblock5 {
 
 /* Blog Post View */
 
+div#block-newfyitheme-views-block-blog-highlight-view-block-1 {
+  padding-top: 2rem;
+  background-color: #f1edeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f3e1f;
+}
+
 .view-id-blog_highlight_view .view-content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2.5rem;
-  padding: 6rem;
+  padding: 3rem 6rem 6rem;
   align-items: stretch;
   justify-content: center;
 }
@@ -335,12 +356,23 @@ div#block-newfyitheme-onelinkheroblock5 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 18vw;
-  padding: 0.8rem;
-  border: 0.5px solid grey;
+  max-width: 20rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   box-sizing: border-box;
   background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-id-blog_highlight_view .view-content .views-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.view-id-blog_highlight_view .view-content .views-row a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .view-id-blog_highlight_view .view-blog-image img {
@@ -348,4 +380,18 @@ div#block-newfyitheme-onelinkheroblock5 {
   width: 100%;
   object-fit: cover;
   display: block;
+}
+
+.view-id-blog_highlight_view .view-blog-image {
+  margin-bottom: 1rem;
+}
+
+.view-id-blog_highlight_view .view-publish-date {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.view-id-blog_highlight_view .view-blog-title {
+  font-size: 0.9rem;
 }
