@@ -11,6 +11,8 @@
   --color-muted: #a0a0a0;
 }
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 /* Layout & Header */
 
 .region-content {
@@ -394,4 +396,108 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 
 .view-id-blog_highlight_view .view-blog-title {
   font-size: 0.9rem;
+}
+
+/* Footer */
+
+.footer-container {
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #000;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-branding {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 160px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin: 0.3rem 0;
+}
+
+.footer-column a,
+.footer-bottom a {
+  color: var(--color-tertiary);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.icon-link {
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+}
+
+.icon-link .social-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: black;
+  transition: fill 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-link::after {
+  content: "";
+  position: absolute;
+  bottom: -110%;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background: blue;
+  border-radius: 2px;
+  transition: bottom 0.4s ease;
+  z-index: 0;
+}
+
+.icon-link:hover::after {
+  bottom: 0;
+}
+
+.icon-link:hover .social-icon {
+  fill: white;
 }
