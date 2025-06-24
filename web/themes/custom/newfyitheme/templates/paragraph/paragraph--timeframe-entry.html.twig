@@ -1,0 +1,13 @@
+{% block content %}
+<div class="timeline-timeframe">
+  <div class="dates">
+    {{ content.field_timeframe_start }} to {{ content.field_timeframe_end }}
+  </div>
+  <div class="timeframe-body">
+    {{ content.field_timeframe_paragraph_body_1 }}
+  </div>
+  <div class="timeframe-image">
+    {{ content.field_timeframe_paragraph_image }}
+  </div>
+</div>
+{% endblock %}
