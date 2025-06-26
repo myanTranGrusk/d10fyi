@@ -501,3 +501,72 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 .icon-link:hover .social-icon {
   fill: white;
 }
+
+/* Timeline History */
+
+/* for development only. comment out once done with dev */
+.field--name-field-timeline-history-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.field--name-field-timeline-history-paragraph .timeline-timeframe {
+  position: relative;
+  color: var(--color-text);
+  border-radius: 20px;
+  border: 4px var(--color-accent-alt) solid;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 800px;
+  align-items: flex-start;
+}
+
+.timeline-timeframe .timeframe-image {
+  flex-shrink: 0;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--color-accent-alt);
+  background-color: white;
+}
+
+.timeline-timeframe .field--name-field-timeframe-paragraph-image {
+  height: 100%;
+}
+
+.timeline-timeframe .timeframe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-timeframe .timeframe-content {
+  flex-grow: 1;
+  padding-top: 0.5rem;
+}
+
+.timeline-timeframe .dates h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.1rem;
+  color: var(--color-accent-alt);
+}
+
+.timeline-timeframe .timeframe-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.timeframe-body h3 {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
