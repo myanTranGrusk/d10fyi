@@ -62,6 +62,16 @@ nav#block-newfyitheme-main-navigation {
   border: none;
 }
 
+header[role="banner"] {
+  box-shadow: #a0a0a0 0px 0.01px 10px;
+  position: sticky;
+}
+
+div#block-newfyitheme-content {
+  padding: 4rem 12rem;
+  align-items: stretch;
+}
+
 /* Hero Block Layout */
 
 main div.container {
@@ -256,7 +266,6 @@ div#block-newfyitheme-onelinkheroblock5 {
 /* Blog Post page styling */
 .blog-post-content {
   display: flex;
-  padding: 4rem 12rem;
   align-items: stretch;
   gap: 2rem;
 }
@@ -395,7 +404,9 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 }
 
 .view-id-blog_highlight_view .view-blog-title {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -505,13 +516,15 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 /* Timeline History */
 
 /* for development only. comment out once done with dev */
-.field--name-field-timeline-history-paragraph {
+.timeline-history-content {
   display: flex;
+  padding: 0 12rem 4rem;
+  align-items: center;
+  gap: 2rem;
   flex-direction: column;
-  gap: 3rem;
 }
 
-.field--name-field-timeline-history-paragraph .timeline-timeframe {
+.timeline-timeframe {
   position: relative;
   color: var(--color-text);
   border-radius: 20px;
@@ -526,9 +539,12 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 }
 
 .timeline-timeframe .timeframe-image {
+  position: absolute;
+  left: 0;
   flex-shrink: 0;
-  width: 9rem;
-  height: 9rem;
+  width: clamp(6rem, 20vw, 9rem);
+  height: clamp(6rem, 20vw, 9rem);
+  transform: translateX(-50%);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -551,6 +567,7 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 .timeline-timeframe .timeframe-content {
   flex-grow: 1;
   padding-top: 0.5rem;
+  margin-left: calc((9rem + 8px) / 2);
 }
 
 .timeline-timeframe .dates h2 {
@@ -569,4 +586,14 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 .timeframe-body h3 {
   font-size: 1.3rem;
   color: var(--color-accent);
+}
+
+.timeline-history-content .timeline-title,
+.our-story-title {
+  align-self: start;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  font-weight: 500;
+  color: var(--color-accent-alt);
 }
