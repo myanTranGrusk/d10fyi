@@ -683,8 +683,8 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 
 .view-meet-the-team .view-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -694,9 +694,99 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .view-meet-the-team .views-row:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(96, 108, 56, 0.8);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/* Individual Items, Meet the Team View */
+
+.member-card {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.member-card .card-header {
+  position: relative;
+  height: 120px;
+  background: linear-gradient(90deg, #32411e 0%, #6b7c3c 50%, #df9a4a 100%);
+}
+
+.member-card .profile-picture {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.member-card .profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-card .card-body {
+  padding: 60px 20px 20px; /* top-padding makes room for the overlap */
+}
+
+.member-card .name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #556b2f;
+}
+
+.member-card .position {
+  margin: 0.25em 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.member-card .divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 0.5em auto;
+  background: #e0e0e0;
+  border: none;
+}
+
+.member-card .description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: left; /* or center if you prefer */
+  max-height: 4.5em; /* roughly 3 lines */
+  overflow: hidden;
+  position: relative;
+}
+
+/* optional “fade-out” at bottom of truncated text */
+.member-card .description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5em;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+}
+
+.member-card .description-display {
+  display: none;
 }
