@@ -683,10 +683,11 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 
 .view-meet-the-team .view-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin: 0;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 0 auto;
   padding: 0;
+  max-width: 80%;
 }
 
 .view-meet-the-team .view-content .views-row {
@@ -702,6 +703,10 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
   box-shadow: 0 8px 20px rgba(96, 108, 56, 0.8);
   transform: translateY(-5px);
   cursor: pointer;
+}
+
+.view.view-meet-the-team a {
+  text-decoration: none;
 }
 
 /* Individual Items, Meet the Team View */
@@ -747,7 +752,7 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 .member-card .name {
   margin: 0;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #556b2f;
 }
 
@@ -770,8 +775,8 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
   font-size: 0.95rem;
   line-height: 1.5;
   color: #333;
-  text-align: left; /* or center if you prefer */
-  max-height: 4.5em; /* roughly 3 lines */
+  text-align: center;
+  max-height: 6em; /* roughly 3 lines */
   overflow: hidden;
   position: relative;
 }
@@ -788,5 +793,9 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 }
 
 .member-card .description-display {
+  display: none;
+}
+
+.profile-popup.is-hidden {
   display: none;
 }
