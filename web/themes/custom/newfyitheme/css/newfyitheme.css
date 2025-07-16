@@ -76,6 +76,18 @@ div#block-newfyitheme-content {
   align-items: stretch;
 }
 
+.path-frontpage div#block-newfyitheme-content {
+  padding: 0;
+}
+
+.path-frontpage .region.region-breadcrumb {
+  display: none;
+}
+
+.contextual-region footer.node__meta {
+    display: none;
+}
+
 /* Hero Block Layout */
 
 main div.container {
@@ -866,11 +878,12 @@ div:is(
   padding: 0;
   height: 100%;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 div:is(
@@ -910,4 +923,34 @@ div:is(
   color: #333;
   margin-top: auto;
   line-height: 1.2;
+}
+
+div:is(
+    .field--name-field-supportive-branches-tier,
+    .field--name-field-saplings-tier
+  )
+  div.field__items {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.field--name-field-seeds-tier div.field__items {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+div:is(
+  .field--name-field-
+)
+
+div:is(
+    .field--name-field-towering-trees-tier,
+    .field--name-field-sustaining-stream-tier,
+    .field--name-field-supportive-branches-tier,
+    .field--name-field-saplings-tier,
+    .field--name-field-seeds-tier,
+    .field--name-field-restaurants-tier
+  )
+  .field__items
+  > .field__item:hover {
+  box-shadow: 0 8px 20px rgba(96, 108, 56, 0.8);
+  transform: translateY(-5px);
 }
