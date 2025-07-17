@@ -71,7 +71,8 @@ header[role="banner"] {
   position: sticky;
 }
 
-div#block-newfyitheme-content {
+div#block-newfyitheme-content,
+div#block-newfyitheme-dcfyifinancialsandannualreports {
   padding: 4rem 12rem;
   align-items: stretch;
 }
@@ -85,7 +86,7 @@ div#block-newfyitheme-content {
 }
 
 .contextual-region footer.node__meta {
-    display: none;
+  display: none;
 }
 
 /* Hero Block Layout */
@@ -938,10 +939,6 @@ div:is(
 }
 
 div:is(
-  .field--name-field-
-)
-
-div:is(
     .field--name-field-towering-trees-tier,
     .field--name-field-sustaining-stream-tier,
     .field--name-field-supportive-branches-tier,
@@ -953,4 +950,62 @@ div:is(
   > .field__item:hover {
   box-shadow: 0 8px 20px rgba(96, 108, 56, 0.8);
   transform: translateY(-5px);
+}
+
+/* Annual & Financial 990 Reports */
+
+.annual-report-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.annual-report-item:hover {
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.annual-report-item__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+}
+
+/* Modifier classes if you need different colors, etc */
+/* .annual-report-item__icon.annual-report-report svg {}
+.annual-report-item__icon.financial-990 svg {} */
+
+.annual-report-item__meta {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.annual-report-item__year {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+.annual-report-item__filename {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.field--name-field-annual-and-financial-repor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 45%;
+}
+
+svg.bi.bi-leaf.icon.icon--form-990,
+svg.bi.bi-flag.icon.icon--report {
+  width: 3vw;
+  height: 3vh;
 }
