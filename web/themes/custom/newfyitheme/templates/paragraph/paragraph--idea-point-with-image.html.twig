@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override for the “Idea Point with Image” paragraph bundle.
+ *
+ * Available variables:
+ * - paragraph: The paragraph entity.
+ * - content:  Render arrays for all fields.
+ */
+#}
+
+{# Grab the unique‑class‑identifier value from the paragraph entity #}
+{% set unique_class = paragraph.field_unique_class_identifier.value %}
+
+<div{{ attributes.addClass('idea-point-with-image', unique_class) }}>
+  <div class="idea-card-inner">
+    
+    <div class="idea-card-text">
+      <h2 class="idea-headline">{{ paragraph.field_idea_headline.value }}</h2>
+      <div class="idea-body">{{ content.field_idea_body }}</div>
+    </div>
+
+    <div class="idea-card-image">
+      {{ content.field_idea_icon }}
+    </div>
+
+  </div>
+</div>
+
