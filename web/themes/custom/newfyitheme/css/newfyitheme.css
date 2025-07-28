@@ -1194,6 +1194,11 @@ details > .accordion__details {
     order: 1;
     padding: 2rem;
   }
+
+  .idea-card-image {
+    flex: none;
+    padding: 2rem;
+  }
 }
 
 .idea-card-image img {
