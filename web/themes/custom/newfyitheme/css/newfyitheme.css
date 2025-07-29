@@ -1217,3 +1217,7 @@ details > .accordion__details {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
+
+.field__item.last-odd {
+    grid-column: span 2;
+}
