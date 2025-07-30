@@ -1,0 +1,55 @@
+{# menu--guide-navigation.html.twig #}
+
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{# Function that runs recursively to create structure of menu #}
+{% macro menu_links(items, attributes, menu_level) %}
+
+    {% import _self as menus %}
+
+    {% if items %}
+        {# Determine the classes for the <ul> based on the level #}
+        {% if menu_level == 0 %}
+            <ul{{ attributes.addClass(['nav navbar-nav']) }}>
+        {% elseif menu_level == 1 %}
+            <ul class="child-pages">
+        {% else %}
+            <ul class="sub-menu">
+        {% endif %}
+
+        {% for item in items %}
+            {# Define base classes for <li> #}
+            {% set item_classes = ['nav-item'] %}
+
+            {# Apply class 'section-label' to top-level <li> elements #}
+            {% if menu_level == 0 %}
+                {% set item_classes = item_classes|merge(['section-label', 'level-1']) %}
+            {% elseif menu_level == 1 %}
+                {% set item_classes = item_classes|merge(['lvl-1-child']) %}
+            {% elseif menu_level == 2 %}
+                {% set item_classes = item_classes|merge(['pt-on-page']) %}
+            {% endif %}
+
+            {# Define classes for the <a> element #}
+            {% set classes_link = [
+                'nav-link',
+                item.is_expanded ? 'dropdown-toggle',
+                item.is_collapsed ? 'dropdown-toggle',
+                item.in_active_trail ? 'active',
+            ] %}
+
+            {# Render <li> with appropriate classes #}
+            <li{{ item.attributes.addClass(item_classes) }}>
+                {{ link(item.title, item.url, { 'class': classes_link }) }}
+
+                {# Check if <li> has <ul> child. If yes, recursively call the macro, passing in <ul> child as item and incrementing menu_level #}
+                {% if item.below %}
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+
+{# Extract the block ID field for the wrapper div ID #}
+
+<div{{ attributes.addClass(classes) }} id="three-link-card-block">
+
+    <div class="link-cards d-flex justify-content-center flex-wrap text-center">
+      {% for i in [1, 2, 3] %}
+        {% set link_field = attribute(content, 'field_link_card_url_' ~ i) %}
+        {% set text_field = attribute(content, 'field_link_card_text_' ~ i) %}
+        {% set cta_field = attribute(content, 'field_link_card_cta_' ~ i) %}
+        {% set image_field = attribute(content, 'field_link_card_' ~ i ~ '_image') %}
+        {% set image_url = image_field[0]['#item'].entity.uri.value is defined
+          ? file_url(image_field[0]['#item'].entity.uri.value)
+          : '' %}
+        {% set alt_text = image_field[0]['#item'].alt ?? '' %}
+
+        {% if link_field and text_field %}
+          <a href="{{ link_field[0]['#url'] }}" class="link-card">
+            <div class="link-card-inner d-flex flex-column justify-content-between h-100">
+              {% if image_url %}
+                <img src="{{ image_url }}" alt="{{ alt_text }}" class="img-fluid mb-3 rounded-top" />
+              {% endif %}
+              <div class="p-3">
+                <h3 class="link-card-title h5 mb-2">{{ text_field }}</h3>
+                {% if cta_field %}
+                  <div class="link-card-footer">
+                    {{ cta_field }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  {% if content.field_link_card_description %}
+    <div class="link-cards-description mb-4">
+      {{ content.field_link_card_description }}
+    </div>
+  {% endif %}
+
+</div>
+

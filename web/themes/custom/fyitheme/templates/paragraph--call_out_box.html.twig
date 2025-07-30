@@ -1,0 +1,78 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{# Dump the content of field_callout_body to inspect its structure #}
+
+{# Extract field_callout_body text content, strip HTML tags, take the first four words & concatenate #}
+{% set body_text = content.field_callout_body[0]['#text']|replace({'&nbsp;': ''})|striptags|split(' ') %}
+{% set first_four_words = body_text|slice(0, 4)|join('-')|lower|trim %}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+		<div id="{{ first_four_words|clean_class }}" class="callout-box {% if paragraph.field_callout_type.value == 'case-studies' %}cs-box{% elseif paragraph.field_callout_type.value == 'tips' %}tips-box{% else %}content{% endif %}" {% if paragraph.field_minimized_word_limit is not empty %} data-word-limit="{{ paragraph.field_minimized_word_limit.0.value }}"{% endif %}>
+			<h2 class="callout-box-title">{{ content.field_callout_title.0 }}</h2>
+			<div class="callout-box-body">{{ content.field_callout_body }}</div>
+
+      {% if paragraph.field_download_resource is not empty %}
+        <div class="callout-download-resource resource-count-{{ paragraph.field_download_resource|length }}">
+          {% if paragraph.field_download_resource|length > 1 %}
+            <h3 class="download-resource-title">Download Resources:</h3>
+          {% else %}
+            <h3 class="download-resource-title">Download Resource:</h3>
+          {% endif %}
+          {% for item in paragraph.field_download_resource %}
+            <button class="btn-download download-resource-{{ loop.index }}" onclick="window.open('{{ item.url }}', '_blank')">{{ item.title }} <i class="bi bi-download"></i></button>
+          {% endfor %}
+        </div>
+      {% endif %}
+		</div>		 	  
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --dark-blue: #143069;
+  --light-blue: #c2d6ff;
+  --red: #b93568;
+  --pink: #ffb4d2;
+  --green: #008299;
+  --green-hover: #007589;
+  --aqua: #73dbeb;
+  --grey: #f3f5f7;
+  --teal: #7283a5;
+}
+
+header .navbar-nav .nav-item {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark-blue) !important;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
+footer {
+  background-color: #143069;
+}
+
+.block-page-title-block {
+  background-color: #b93568;
+  color: white;
+  padding: 50px;
+  margin: 0 0 80px 0;
+}
+
+.page-title .field--name-title {
+  color: white !important;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+body {
+  color: var(--dark-blue);
+}
+
+/** Sidebar Menu **/
+
+.region-sidebar-first .nav .nav-item a {
+  white-space: normal;
+}
+
+.region-sidebar-first h5 {
+  color: var(--dark-blue);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.region-sidebar-first .navbar-nav .nav-item {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--green);
+  line-height: 18px;
+}
+
+.menu--guide-menu .navbar-nav li a {
+  padding: 10px;
+  border-radius: 24px;
+  color: #ffffff;
+  font-weight: 700;
+  background: var(--green);
+  width: 700px;
+  text-align: center;
+  margin: 5px;
+}
+
+.menu--guide-menu .navbar-nav li a:hover {
+  background: #007589;
+}
+
+/** Call Out Boxes **/
+
+.co-box {
+  margin: 10px;
+  padding: 25px;
+}
+
+.cs-box {
+  border: 3px solid var(--green);
+  border-radius: 5px;
+}
+
+.tips-box {
+  border: 3px solid var(--red);
+  border-radius: 5px;
+}
+
+.content {
+  background-color: var(--grey);
+}
+
+.content .co-title {
+  text-align: center;
+}
+
+.co-img {
+  display: block;
+  width: 500px;
+  max-width: 80%;
+  margin: 5px auto;
+}
+
+.section-link-box {
+  text-align: center;
+  margin: 25px;
+}
+
+.previous-b,
+.next-b,
+.field--name-field-lb-link a {
+  width: 106px;
+  border-radius: 24px !important;
+  color: white !important;
+}
+
+.previous-b {
+  background-color: var(--red) !important;
+}
+
+.next-b {
+  background-color: var(--green) !important;
+}
+
+#block-introductiontoguidelink .field__item {
+  text-align: center;
+  padding: 20px;
+}
+
+.field--name-field-lb-link a {
+  background-color: var(--green) !important;
+  width: 200px;
+  padding: 10px 40px;
+  text-decoration: none;
+  margin: 20px;
+  font-weight: 600;
+}
