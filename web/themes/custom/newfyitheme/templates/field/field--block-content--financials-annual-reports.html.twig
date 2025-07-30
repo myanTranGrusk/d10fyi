@@ -1,0 +1,103 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+
+  {# 1 init buckets #}
+  {% set annual_reports = [] %}
+  {% set form_990s       = [] %}
+
+  {# 2 partition items into buckets #}
+  {% for item in items %}
+    {% set paragraph = item.content['#paragraph'] %}
+   {% set raw_type  = paragraph.field_resource_type.value %}
+  {% set type      = raw_type|trim|lower %}
+
+  {% if type == 'annual_report' %}
+      {% set annual_reports = annual_reports|merge([item]) %}
+    {% else %}
+      {% set form_990s       = form_990s|merge([item]) %}
+    {% endif %}
+  {% endfor %}
+
+  {# 3a render Annual Reports #}
+  {% if annual_reports|length %}
+    <div class="field__items annual-reports-wrapper">
+      {% for item in annual_reports %}
+        <div{{ item.attributes.addClass('field__item') }}>
+          {{ item.content }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {# 3b render Form 990s #}
+  {% if form_990s|length %}
+    <div class="field__items form-990s-wrapper">
+      {% for item in form_990s %}
+        <div{{ item.attributes.addClass('field__item') }}>
+          {{ item.content }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+{% else %}
+  {# Wrap everything in the field container, with label #}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+
+    {# 1 init buckets again #}
+    {% set annual_reports = [] %}
+    {% set form_990s       = [] %}
+
+    {# 2 partition items #}
+    {% for item in items %}
+      {% set paragraph = item.content['#paragraph'] %}
+      {% set raw_type  = paragraph.field_resource_type.value %}
+      {% set type      = raw_type|trim|lower %}
+
+      {% if type == 'annual_report' %}
+        {% set annual_reports = annual_reports|merge([item]) %}
+      {% else %}
+        {% set form_990s     = form_990s|merge([item]) %}
+      {% endif %}
+    {% endfor %}
+
+    {# 3a render Annual Reports with the same field__items wrapper #}
+    {% if annual_reports|length %}
+      <div class="field__items annual-reports-wrapper">
+        {% for item in annual_reports %}
+          <div{{ item.attributes.addClass('field__item') }}>
+            {{ item.content }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# 3b render Form 990s #}
+    {% if form_990s|length %}
+      <div class="field__items form-990s-wrapper">
+        {% for item in form_990s %}
+          <div{{ item.attributes.addClass('field__item') }}>
+            {{ item.content }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+      css/newfyitheme.css: {}
+  js:
+    js/scripts.js: {}
+    js/ideapoint.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,24 @@
+{# themes/custom/yourtheme/templates/paragraph/paragraph--sponsors.html.twig #}
+{% extends "paragraph.html.twig" %}
+
+{% block content %}
+  <div{{ attributes.addClass('sponsor-item') }}>
+    {# Pull the raw URL out of your link field #}
+    {% set url = paragraph.field_logo_link.uri %}
+
+    {% if url %}
+      <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+        {# Render the image via Drupal’s formatter #}
+        {{ content.field_logo_image }}
+      </a>
+    {% else %}
+      {# If there’s no link, show the image or fall back to the name text #}
+      {{ content.field_logo_image|default(content.field_sponsor_name_text) }}
+    {% endif %}
+
+    {# Always print the sponsor’s name text underneath (if present) #}
+    {% if paragraph.field_sponsor_name_text.value %}
+      <div class="sponsor-name">{{ paragraph.field_sponsor_name_text.value }}</div>
+    {% endif %}
+  </div>
+{% endblock %}

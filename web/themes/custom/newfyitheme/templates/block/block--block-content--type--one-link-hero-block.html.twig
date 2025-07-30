@@ -1,0 +1,25 @@
+{% extends "block.html.twig" %} {% block content %}
+<div id="one-link-hero-block" class="mgrusk">
+  {% if content.field_image_media %}
+  <div class="hero-image">
+    {{ content.field_image_media }}
+  </div>
+  {% endif %}
+
+  <div class="hero-content">
+    {% if content.field_title_headline %}
+    <div class="hero-headline">
+      <h2>{{ content.field_title_headline }}</h2>
+    </div>
+    {% endif %} {% if content.field_subtitle_paragraph %}
+    <div class="hero-subtitle">
+      {{ content.field_subtitle_paragraph }}
+    </div>
+    {% endif %} {% if content.field_one_link %}
+    <div class="hero-link">
+      {{ content.field_one_link }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

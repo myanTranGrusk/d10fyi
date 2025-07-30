@@ -68,7 +68,7 @@ parameters:
     # domain name. Set the name_suffix to a short random string to ensure this
     # session cookie name is unique on different installations on the same
     # domain and path (for example, when migrating from Drupal 7).
-    name_suffix: ""
+    name_suffix: ''
   twig.config:
     # Twig debugging:
     #
@@ -88,17 +88,27 @@ parameters:
     #
     # Enabling Twig debugging is not recommended in production environments.
     # @default false
-
-    # Twig Debug OFF
     debug: false
+    # Twig auto-reload:
+    #
+    # Automatically recompile Twig templates whenever the source code changes.
+    # If you don't provide a value for auto_reload, it will be determined
+    # based on the value of debug.
+    #
+    # Enabling auto-reload is not recommended in production environments.
+    # @default null
     auto_reload: null
+    # Twig cache:
+    #
+    # By default, Twig templates will be compiled and stored in the filesystem
+    # to increase performance. Disabling the Twig cache will recompile the
+    # templates from source each time they are used. In most cases the
+    # auto_reload setting above should be enabled rather than disabling the
+    # Twig cache.
+    #
+    # Disabling the Twig cache is not recommended in production environments.
+    # @default true
     cache: true
-
-    # Twig Debug ON
-    # debug: true
-    # auto_reload: true
-    # cache: false
-
     # File extensions:
     #
     # List of file extensions the Twig system is allowed to load via the
@@ -121,8 +131,7 @@ parameters:
     # render array, hence varying every render array by these cache contexts.
     #
     # @default ['languages:language_interface', 'theme', 'user.permissions']
-    required_cache_contexts:
-      ["languages:language_interface", "theme", "user.permissions"]
+    required_cache_contexts: ['languages:language_interface', 'theme', 'user.permissions']
     # Renderer automatic placeholdering conditions:
     #
     # Drupal allows portions of the page to be automatically deferred when
@@ -147,7 +156,7 @@ parameters:
       # Disable by setting to [].
       #
       # @default ['session', 'user']
-      contexts: ["session", "user"]
+      contexts: ['session', 'user']
       # Tags with a high invalidation frequency.
       #
       # Disable by setting to [].
@@ -213,7 +222,7 @@ parameters:
     allowedMethods: []
     # Configure requests allowed from specific origins. Do not include trailing
     # slashes with URLs.
-    allowedOrigins: ["*"]
+    allowedOrigins: ['*']
     # Configure requests allowed from origins, matching against regex patterns.
     allowedOriginsPatterns: []
     # Sets the Access-Control-Expose-Headers header.
