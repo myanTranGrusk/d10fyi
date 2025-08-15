@@ -244,6 +244,19 @@ div#block-newfyitheme-onelinkheroblock5 {
     flex-direction: column;
     align-items: center;
   }
+  .link-card {
+    width: 100%;
+    min-height: 30rem;
+  }
+  .link-card-inner {
+    height: 100%;
+  }
+  .link-card-image {
+    height: 18rem;
+  }
+  .link-card-content {
+    flex: 1;
+  }
 }
 
 /* Link Card styling */
@@ -258,7 +271,7 @@ div#block-newfyitheme-onelinkheroblock5 {
 
 .link-card-inner {
   display: flex;
-  max-height: 90%;
+  /* max-height: 90%; */
 }
 
 .link-card-image,
