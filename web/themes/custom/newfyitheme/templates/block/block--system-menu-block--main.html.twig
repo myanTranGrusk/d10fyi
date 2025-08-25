@@ -1,0 +1,29 @@
+{# Bootstrap 5 responsive navbar for the Main menu #}
+<nav
+  class="navbar navbar-expand-lg"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <div class="container">
+    {# Toggler #}
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#block-newfyitheme-main-navigation"
+      aria-controls="block-newfyitheme-main-navigation"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {# Collapsible container #}
+    <div
+      class="collapse navbar-collapse"
+      id="block-newfyitheme-main-navigation"
+    >
+      {{ content }}
+    </div>
+  </div>
+</nav>
