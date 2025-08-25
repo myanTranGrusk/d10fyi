@@ -73,6 +73,9 @@ nav#block-newfyitheme-main-navigation {
 header[role="banner"] {
   box-shadow: #a0a0a0 0px 0.01px 10px;
   position: sticky;
+  background-color: white;
+  top: 4%;
+  z-index: 100;
 }
 
 div#block-newfyitheme-content {
