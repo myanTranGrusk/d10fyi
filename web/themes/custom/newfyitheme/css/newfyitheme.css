@@ -100,6 +100,20 @@ div#block-newfyitheme-dcfyifinancialsandannualreports {
   display: none;
 }
 
+@media (max-width: 768px) {
+  div#block-newfyitheme-content {
+    padding: 4rem 2rem;
+  }
+
+  .timeline-history-content {
+    padding: 0 3rem;
+  }
+
+  .timeline-history-content div.timeline-title {
+    align-self: auto;
+  }
+}
+
 /* Hamburger menu */
 @media (max-width: 768px) {
   .navbar .navbar-collapse {
@@ -310,6 +324,13 @@ div#block-newfyitheme-onelinkheroblock5 {
   }
 }
 
+@media (max-width: 425px) {
+  .hero-content {
+    max-width: 75%;
+    left: 10%;
+  }
+}
+
 /* 3 Link Cards Styling */
 .three-card-row {
   display: flex;
@@ -328,7 +349,6 @@ div#block-newfyitheme-onelinkheroblock5 {
   }
   .link-card {
     width: 100%;
-    min-height: 30rem;
   }
   .link-card-inner {
     height: 100%;
@@ -875,6 +895,18 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 
 .view.view-meet-the-team a {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .view-meet-the-team .view-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .view-meet-the-team .view-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Individual Items, Meet the Team View */
