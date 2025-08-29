@@ -1,0 +1,55 @@
+<div class="news-card">
+  <div class="nc-left">
+    <div class="news-image">
+      {{ content.field_news_event_image }}
+    </div>
+  </div>
+  <div class="nc-right">
+    <h2 class="news-title">
+      {{ content.field_news_event_title }}
+    </h2>
+
+    {% set has_date = attribute(content.field_date_of_news_event, '#theme') is
+    not empty %} {% set has_source = attribute(content.field_news_event_source,
+    '#theme') is not empty %} {% if has_date or has_source %}
+    <div class="news-meta">
+      {% if has_date %}
+      {{ content.field_date_of_news_event }}
+      {% endif %} {% if has_date and has_source %} | {% endif %} {% if
+      has_source %}
+      {{ content.field_news_event_source }}
+      {% endif %}
+    </div>
+    {% endif %} 
+    
+    {% set full_text = content.field_truncated_formatted_news_e['#markup']|striptags %} 
+    {% set words = full_text|split(' ') %} {% if words|length > 95 %}
+    
+    <div class="news-text-preview">
+      {{ words|slice(0, 95)|join(' ') ~ '...' }}
+      <button class="read-more" data-popup-id="popup-{{ loop.index }}">
+        Read More
+      </button>
+    </div>
+
+    <div id="popup-{{ loop.index }}" class="news-popup hidden">
+      <div class="popup-content">
+        <button class="close-popup">×</button>
+        <h2 class="news-title">{{ content.field_news_event_title }}</h2>
+        <div class="news-image">{{ content.field_news_event_image }}</div>
+        <div class="news-meta">
+          {% if date %}{{ date }}{% endif %} {% if date and source %} | {% endif
+          %} {% if source %}{{ source }}{% endif %}
+        </div>
+        <div class="full-news-text">
+          {{ content.field_truncated_formatted_news_e }}
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="news-text">
+      {{ content.field_truncated_formatted_news_e }}
+    </div>
+    {% endif %}
+  </div>
+</div>

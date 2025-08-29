@@ -4,14 +4,16 @@
   'field_link_card_text_' ~ i) %} {% set cta_field = attribute(content,
   'field_link_card_cta_' ~ i) %} {% set url_field = attribute(content,
   'field_link_card_url_' ~ i) %} {% if url_field %}
-  <a href="{{ url_field['#items'].0['url'] }}" class="link-card">
+  <a href="{{ url_field[0]['#title'] }}" class="link-card">
     <div class="link-card-inner">
       <div class="link-card-image">
         {{ image_field }}
       </div>
       <div class="link-card-content">
         <div class="link-card-title">{{ title_field }}</div>
-        <div class="link-card-cta">{{ cta_field }}</div>
+        <div class="link-card-cta">
+          {{ cta_field }}
+        </div>
       </div>
     </div>
   </a>
