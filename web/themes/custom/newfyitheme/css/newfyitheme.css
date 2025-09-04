@@ -792,6 +792,21 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 
 /* Member profile */
 
+.page-node-type-team-member-profile div#block-newfyitheme-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.back-to-team {
+  margin: auto;
+}
+
+.back-to-team a.back-link {
+  text-decoration: none;
+  color: var(--color-accent-alt);
+}
+
 .member-profile-full {
   display: flex;
   flex-direction: row;
