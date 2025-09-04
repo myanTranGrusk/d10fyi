@@ -15,7 +15,6 @@ web/sites/*/files/styles
 web/sites/default/files/tmgmt_file/*
 
 # (often useful too)
-web/sites/*/files/
 web/sites/*/private/
 web/sites/simpletest
 
