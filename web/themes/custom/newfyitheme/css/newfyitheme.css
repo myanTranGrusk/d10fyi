@@ -689,12 +689,41 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
   position: absolute;
   bottom: -110%;
   left: 0;
-  width: 110%;
-  height: 110%;
+  width: 120%;
+  height: 120%;
   background: blue;
   border-radius: 2px;
   transition: bottom 0.4s ease;
   z-index: 0;
+}
+
+.icon-link:has(.bi-facebook)::after {
+  background: #39569c;
+  width: 120%;
+  height: 120%;
+}
+
+.icon-link:has(.bi-linkedin)::after {
+  background: #0077b5;
+  width: 120%;
+  height: 120%;
+}
+
+.icon-link:has(.bi-instagram)::after {
+  background: linear-gradient(
+    to right,
+    #833ab4,
+    /* Royal Purple */ #fd1d1d,
+    /* Torch Red */ #fcb045 /* Yellow Orange */
+  );
+  width: 120%;
+  height: 120%;
+}
+
+.icon-link:has(.bi-twitter-x)::after {
+  background: #14171a;
+  width: 120%;
+  height: 120%;
 }
 
 .icon-link:hover::after {
