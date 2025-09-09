@@ -74,8 +74,8 @@ header[role="banner"] {
   box-shadow: #a0a0a0 0px 0.01px 10px;
   position: sticky;
   background-color: white;
-  top: 4%;
-  z-index: 100;
+  z-index: 400;
+  top: 0;
 }
 
 div#block-newfyitheme-content {
@@ -134,7 +134,7 @@ div#block-newfyitheme-dcfyifinancialsandannualreports {
 
   .navbar .navbar-toggler {
     position: fixed;
-    top: calc(5vh + 8px);
+    /* top: calc(5vh + 8px); */
     /* right: 16px; */
     z-index: 1060;
     border: 0;
@@ -358,6 +358,9 @@ div#block-newfyitheme-onelinkheroblock5 {
   }
   .link-card-content {
     flex: 1;
+  }
+  .link-card-content .link-card-cta {
+    font-size: 0.8rem;
   }
 }
 
@@ -687,7 +690,7 @@ div#block-newfyitheme-views-block-blog-highlight-view-block-1 h2 {
 .icon-link::after {
   content: "";
   position: absolute;
-  bottom: -110%;
+  bottom: -120%;
   left: 0;
   width: 120%;
   height: 120%;

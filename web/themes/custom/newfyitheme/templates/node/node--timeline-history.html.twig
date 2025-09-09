@@ -1,10 +1,9 @@
 <div class="timeline-history-content">
   <div class="timeline-title">Our History</div>
-
-  {% for key, paragraph in content.field_timeline_history_paragraph %} {% if
-  paragraph['#paragraph'] is defined %}
-  <div class="timeframe-item">
-    {{ paragraph }}
-  </div>
+  {{ dump() }}
+  {% set list = content.field_timeline_history_paragraph ?? [] %} {% for k, item
+  in list %} {# keep only numeric children; skip '#theme', '#cache', etc. #} {%
+  if ((k ~ '')|slice(0,1)) != '#' %}
+  <div class="timeframe-item">{{ item }}</div>
   {% endif %} {% endfor %}
 </div>
