@@ -14,6 +14,10 @@ web/sites/*/files/php
 web/sites/*/files/styles
 web/sites/default/files/tmgmt_file/*
 
+# CiviCRM
+web/sites/*/files/civicrm/
+web/sites/*/civicrm.settings.php
+
 # (often useful too)
 web/sites/*/private/
 web/sites/simpletest
