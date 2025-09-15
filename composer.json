@@ -15,6 +15,10 @@
         }
     ],
     "require": {
+        "civicrm/civicrm-core": "6.4.1",
+        "civicrm/civicrm-drupal-8": "6.4.1",
+        "civicrm/civicrm-packages": "6.4.1",
+        "civicrm/cli-tools": "^2025.06",
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/bootstrap5": "^4.0",
@@ -35,12 +39,16 @@
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
+            "civicrm/civicrm-asset-plugin": true,
+            "civicrm/composer-compile-plugin": true,
+            "civicrm/composer-downloads-plugin": true,
             "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
@@ -99,6 +107,8 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
-        }
+        },
+        "enable-patching": "true",
+        "compile-whitelist": ["civicrm/civicrm-core", "civicrm/composer-compile-lib"]
     }
 }
